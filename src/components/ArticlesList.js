@@ -6,9 +6,11 @@ import {connect} from 'react-redux';
 const ArticlesList = ({categoryFilter, articles}) => {
     const {isLightTheme, light, dark} = useContext(ThemeContext);
     const theme = isLightTheme ? light: dark;
+    console.log("categoryFilter", categoryFilter);
+   
     
     return (
-        <div style={{color: theme.syntax, background: theme.bg}}>
+        <div className='article-list' style={{color: theme.syntax, background: theme.bg}}>
             <ul>
                 {
                     articles && articles.length 
@@ -23,9 +25,10 @@ const ArticlesList = ({categoryFilter, articles}) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log("mapStateToProps", state.root.articles)
     return {
-        categoryFilter: state.categoryFilter,
-        articles: state.articles
+        categoryFilter: state.root.categoryFilter,
+        articles: state.root.articles,
     }
 }
 

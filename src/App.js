@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {increment, decrement} from './actions';
 import ArticlesList from './components/ArticlesList';
+import ThemeToggle from './components/ThemeToggle';
 import ThemeContextProvider from './contexts/ThemeContext';
 
 
@@ -19,6 +20,7 @@ function App() {
         <button onClick={() => dispatch(decrement())}>-</button>
         {isLogged ? <h3>Valuabel Information I shouldn't see</h3>: ''}
         <ArticlesList />
+        <ThemeToggle/>
        </ThemeContextProvider>
     </div>
   );
