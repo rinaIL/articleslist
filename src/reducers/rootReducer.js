@@ -26,6 +26,22 @@ const initState = {
 }
 const rootReducer = (state = initState, action) => {
 
+    if(action.type === 'CHANGE_CATEGORY_FILTER') {
+
+        return {
+            ...state,
+            categoryFilter: action.payload
+        };
+    }
+
+    if(action.type === 'DELETE_ARTICLE') {
+        const deletedArticle = state.articles.filter((article) => article.id != action.payload)
+        return {
+            ...state,
+            articles: deletedArticle
+        }
+    }
+
     return state;
 }
 

@@ -13,16 +13,17 @@ body {
   text-align: center;
 }
 
-.book-list {
+.article-list {
   padding: 20px;
   margin-bottom: 20px;
 }
-.book-list ul{
+.article-list ul{
   padding: 0;
   list-style-type: none;
 }
-.book-list li {
+.article-list li {
   padding: 10px;
   margin: 10px auto;
   border-radius: 10px;
 }
+
